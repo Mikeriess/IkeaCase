@@ -1,6 +1,6 @@
 # Files:
 
-- <b>SimulateData.R:<b> The R-script for simulating data based on pre-defined conditions.
+- <b>SimulateData.R:</b> The R-script for simulating data based on pre-defined conditions.
 - Full_Kernel.ipynb: The framework consisting of the LSTM model + the linear programming module.
 
 #	Brief from the client
