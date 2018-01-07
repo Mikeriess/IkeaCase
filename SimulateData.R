@@ -1,7 +1,7 @@
 ############################################################################
 # Generate arrivals
 ############################################################################
-
+setwd("~/Desktop/Ikea_Case")
 #Sampling period:
 Dates = seq(as.Date("2016/1/1"), as.Date("2016/6/1"), "days") #half a year
 
@@ -25,16 +25,16 @@ for (i in 1:length(Dates)){
        weekdays(as.Date(Dates[i])) == "Tirsdag" |
        weekdays(as.Date(Dates[i])) == "Onsdag" | 
        weekdays(as.Date(Dates[i])) == "Torsdag"){
-        value = rpois(1,lambda = 1)
+        value = rpois(1,lambda = 12)
     }
     if(weekdays(as.Date(Dates[i])) == "Fredag"){
-      value = rpois(1,lambda = 3)
+      value = rpois(1,lambda = 24)
     }    
-    if(weekdays(as.Date(Dates[i])) == "Lørdag"){
-      value = rpois(1,lambda = 5)
+    if(weekdays(as.Date(Dates[i])) == "LÃ¸rdag"){
+      value = rpois(1,lambda = 32)
     }
-    if(weekdays(as.Date(Dates[i])) == "Søndag"){
-      value = rpois(1,lambda = 6)
+    if(weekdays(as.Date(Dates[i])) == "SÃ¸ndag"){
+      value = rpois(1,lambda = 26)
     }
     
     #Generate a discrete stochastic component
@@ -63,7 +63,7 @@ for (i in 1:length(Dates)){
 
 #Add weekday name;
 Days$Weekday = weekdays(as.Date(Days$Date))
-Days <- subset(Days, Weekday != "Søndag")
+Days <- subset(Days, Weekday != "SÃ¸ndag")
 
 ########################## INSPECTION ###########################
 
@@ -72,21 +72,22 @@ hist(Days$Arrivals)
 summary(Days$Arrivals)
 
 #Inspect the distribution of the checkout time
-hist(Days$Checkouttimes)
-summary(Days$Checkouttimes)
+#hist(Days$Checkouttimes)
+#summary(Days$Checkouttimes)
 
 #Inspect averages by group:
-aggregate(Days[, "Checkouttimes"], list(Days$Weekday), mean)
+#aggregate(Days[, "Checkouttimes"], list(Days$Weekday), mean)
 aggregate(Days[, "Arrivals"], list(Days$Weekday), mean)
 
 library(gplots)
-plotmeans(Checkouttimes ~ Weekday, data = Days, frame = FALSE)
+#plotmeans(Checkouttimes ~ Weekday, data = Days, frame = FALSE)
 plotmeans(Arrivals ~ Weekday, data = Days, frame = FALSE)
 
 ################################################################################
 # Store the simulated data
 ################################################################################
 
-write.table(Days,file="/users/mikeriess/desktop/Ikea_Case/SimulatedData.csv",
+write.table(Days,file="SimulatedData.csv",
             sep=",",dec = ".",row.names = FALSE)
+
 
