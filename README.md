@@ -5,7 +5,7 @@
 - <b>Full_Kernel.ipynb:</b> The framework consisting of the LSTM model + the linear programming module.
 - <b>StaffingPlan.csv:</b> Example output from the model (120 minutes staffing plan).
 
-<b>Dependencies (python libs):</b>
+<b>Dependencies (python libs):</b><br>
 math, numpy, pandas, sklearn, keras, tensorflow, math, pulp.
 
 #	Brief from the client
