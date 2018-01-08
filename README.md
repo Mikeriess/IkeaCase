@@ -1,7 +1,9 @@
 # Files:
 
 - <b>SimulateData.R:</b> The R-script for simulating data based on pre-defined conditions.
-- Full_Kernel.ipynb: The framework consisting of the LSTM model + the linear programming module.
+- <b>SimulatedData.csv:</b> Example data.
+- <b>Full_Kernel.ipynb:</b> The framework consisting of the LSTM model + the linear programming module.
+- <b>StaffingPlan.csv:</b> Example output from the model (120 minutes staffing plan).
 
 #	Brief from the client
 This case is adapted from a tender made by a large furniture company. In the tender, the company wants to optimize its waiting time in key areas of the store, which will eventually increase sales per working hour (an internal KPI). The main goal is to utilize predictive analytics in order to optimize the staff-planning.
