@@ -5,6 +5,9 @@
 - <b>Full_Kernel.ipynb:</b> The framework consisting of the LSTM model + the linear programming module.
 - <b>StaffingPlan.csv:</b> Example output from the model (120 minutes staffing plan).
 
+<b>Dependencies (python libs):</b>
+math, numpy, pandas, sklearn, keras, tensorflow, math, pulp.
+
 #	Brief from the client
 This case is adapted from a tender made by a large furniture company. In the tender, the company wants to optimize its waiting time in key areas of the store, which will eventually increase sales per working hour (an internal KPI). The main goal is to utilize predictive analytics in order to optimize the staff-planning.
 
